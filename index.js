@@ -16,6 +16,7 @@ const HomePro = require("./controller/HomePro");
 const Homedis = require("./controller/Homedis");
 const AllDise = require("./controller/AllDise");
 const Diynamicd = require("./controller/Diynamicd");
+const VideoC = require("./controller/VideoC");
 
 app.use(cors());
 app.use(express.json());
@@ -37,6 +38,7 @@ const upload = multer({ storage: storage });
 app.use('/uploads', express.static("uploads"))
 
 app.post("/login", LoginC);
+app.post("/api/video", VideoC);
 app.post('/adlog', Adlogin)
 app.get('/api/homepro',HomePro)
 app.get('/api/homedis',Homedis)
