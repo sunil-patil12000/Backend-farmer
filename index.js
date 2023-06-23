@@ -18,6 +18,7 @@ const AllDise = require("./controller/AllDise");
 const Diynamicd = require("./controller/Diynamicd");
 const VideoC = require("./controller/VideoC");
 const OTPgen = require("./controller/OTPgen");
+const ForgetpassC = require("./controller/ForgetpassC");
 
 app.use(cors());
 app.use(express.json());
@@ -41,10 +42,11 @@ app.use('/uploads', express.static("uploads"))
 app.post("/login", LoginC);
 app.post("/api/video", VideoC);
 app.post('/adlog', Adlogin)
-app.get('/api/homepro',HomePro)
-app.get('/api/homedis',Homedis)
-app.get('/api/dise',AllDise);
-app.post('/api/otp',OTPgen)
+app.get('/api/homepro', HomePro)
+app.get('/api/homedis', Homedis)
+app.get('/api/dise', AllDise);
+app.post('/api/otp', OTPgen)
+app.post('/api/forget', ForgetpassC)
 app.post("/register", RegisterC);
 app.post("/order", OrderC);
 app.get("/api/orders", AllOrders);
